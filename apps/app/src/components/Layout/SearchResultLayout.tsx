@@ -2,7 +2,10 @@ import React, { ReactNode } from 'react';
 
 import { BasicLayout } from '~/components/Layout/BasicLayout';
 
-import commonStyles from './SearchResultLayout.module.scss';
+import styles from './SearchResultLayout.module.scss';
+
+const moduleClass = styles['on-search'] ?? '';
+
 
 type Props = {
   children?: ReactNode,
@@ -11,7 +14,7 @@ type Props = {
 const SearchResultLayout = ({ children }: Props): JSX.Element => {
 
   return (
-    <BasicLayout className={`on-search ${commonStyles['on-search']}`}>
+    <BasicLayout className={moduleClass}>
       { children }
     </BasicLayout>
   );
