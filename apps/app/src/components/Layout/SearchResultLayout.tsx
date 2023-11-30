@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-import { BasicLayout } from '~/components/Layout/BasicLayout';
+import { BasicPageOperatableLayout } from '~/components/Layout/BasicLayout';
 
 import styles from './SearchResultLayout.module.scss';
 
@@ -14,9 +14,9 @@ type Props = {
 const SearchResultLayout = ({ children }: Props): JSX.Element => {
 
   return (
-    <BasicLayout className={moduleClass}>
+    <BasicPageOperatableLayout className={moduleClass}>
       { children }
-    </BasicLayout>
+    </BasicPageOperatableLayout>
   );
 };
 

@@ -50,7 +50,7 @@ import { useSelectedGrant } from '~/stores/ui';
 import { useSetupGlobalSocket, useSetupGlobalSocketForPage } from '~/stores/websocket';
 import loggerFactory from '~/utils/logger';
 
-import { BasicLayout } from '../components/Layout/BasicLayout';
+import { BasicPageOperatableLayout } from '../components/Layout/BasicLayout';
 import GrowiContextualSubNavigationSubstance from '../components/Navbar/GrowiContextualSubNavigation';
 import { DisplaySwitcher } from '../components/Page/DisplaySwitcher';
 
@@ -343,9 +343,9 @@ const Page: NextPageWithLayout<Props> = (props: Props) => {
 };
 
 
-const BasicLayoutWithEditor = ({ children }: { children?: ReactNode }): JSX.Element => {
+const LayoutWithEditor = ({ children }: { children?: ReactNode }): JSX.Element => {
   const editorModeClassName = useEditorModeClassName();
-  return <BasicLayout className={editorModeClassName}>{children}</BasicLayout>;
+  return <BasicPageOperatableLayout className={editorModeClassName}>{children}</BasicPageOperatableLayout>;
 };
 
 type LayoutProps = Props & {
@@ -356,7 +356,7 @@ const Layout = ({ children, ...props }: LayoutProps): JSX.Element => {
   // init sidebar config with UserUISettings and sidebarConfig
   useInitSidebarConfig(props.sidebarConfig, props.userUISettings);
 
-  return <BasicLayoutWithEditor>{children}</BasicLayoutWithEditor>;
+  return <LayoutWithEditor>{children}</LayoutWithEditor>;
 };
 
 Page.getLayout = function getLayout(page: React.ReactElement<Props>) {

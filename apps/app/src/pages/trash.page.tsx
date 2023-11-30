@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-import type { IUser, IUserHasId } from '@growi/core';
+import type { IUser } from '@growi/core';
 import type { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
@@ -11,7 +11,7 @@ import type { CrowiRequest } from '~/interfaces/crowi-request';
 import type { RendererConfig } from '~/interfaces/services/renderer';
 import { useCurrentPageId } from '~/stores/page';
 
-import { BasicLayout } from '../components/Layout/BasicLayout';
+import { BasicPageOperatableLayout } from '../components/Layout/BasicLayout';
 import {
   useCurrentUser, useCurrentPathname, useGrowiCloudUri,
   useIsSearchServiceConfigured, useIsSearchServiceReachable,
@@ -87,7 +87,7 @@ const Layout = ({ children, ...props }: LayoutProps): JSX.Element => {
   // init sidebar config with UserUISettings and sidebarConfig
   useInitSidebarConfig(props.sidebarConfig, props.userUISettings);
 
-  return <BasicLayout>{children}</BasicLayout>;
+  return <BasicPageOperatableLayout>{children}</BasicPageOperatableLayout>;
 };
 
 TrashPage.getLayout = function getLayout(page) {
