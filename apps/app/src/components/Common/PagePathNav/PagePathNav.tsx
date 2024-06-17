@@ -91,7 +91,7 @@ export const PagePathNav = (props: Props): JSX.Element => {
   return (
     <div style={{ maxWidth }}>
       <span className={`${formerLinkClassName ?? ''} ${styles['grw-former-link']}`}>{formerLink}</span>
-      <div className="d-flex align-items-center">
+      <div className="d-flex align-items-center mt-sm-2">
         <h1 className={`m-0 ${latterLinkClassName}`}>
           {latterLink}
         </h1>
@@ -148,7 +148,7 @@ export const PagePathNavSticky = (props: PagePathNavStickyProps): JSX.Element =>
     // Controlling pointer-events
     //  1. disable pointer-events with 'pe-none'
     <div ref={pagePathNavRef}>
-      <Sticky className={`${styles['grw-page-path-nav-sticky']} mb-4`} innerClass="mt-1 pe-none" innerActiveClass="active">
+      <Sticky className={`${styles['grw-page-path-nav-sticky']} mb-5`} innerClass="mt-1 pe-none" innerActiveClass="active">
         {({ status }) => {
           const isCollapseParents = status === Sticky.STATUS_FIXED;
           return (
@@ -160,7 +160,7 @@ export const PagePathNavSticky = (props: PagePathNavStickyProps): JSX.Element =>
               <PagePathNav
                 {...props}
                 isCollapseParents={isCollapseParents}
-                latterLinkClassName={isCollapseParents ? 'fs-3  text-truncate' : 'fs-2'}
+                latterLinkClassName={isCollapseParents ? 'fs-3  text-truncate' : ''}
                 maxWidth={isCollapseParents ? navMaxWidth : undefined}
               />
             </div>
