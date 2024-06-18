@@ -90,8 +90,8 @@ export const PagePathNav = (props: Props): JSX.Element => {
 
   return (
     <div style={{ maxWidth }}>
-      <span className={`${formerLinkClassName ?? ''} ${styles['grw-former-link']}`}>{formerLink}</span>
-      <div className="d-flex align-items-center mt-sm-2">
+      <span className={`${formerLinkClassName ?? ''} ${styles['grw-former-link']} d-inline-block mb-sm-2`}>{formerLink}</span>
+      <div className="d-flex align-items-center">
         <h1 className={`m-0 ${latterLinkClassName}`}>
           {latterLink}
         </h1>
