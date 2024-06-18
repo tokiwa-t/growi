@@ -90,7 +90,7 @@ export const PagePathNav = (props: Props): JSX.Element => {
 
   return (
     <div style={{ maxWidth }}>
-      <span className={`${formerLinkClassName ?? ''} ${styles['grw-former-link']} d-inline-block mb-sm-2`}>{formerLink}</span>
+      <span className={`small ${formerLinkClassName} ${styles['grw-former-link']}`}>{formerLink}</span>
       <div className="d-flex align-items-center">
         <h1 className={`m-0 ${latterLinkClassName}`}>
           {latterLink}
@@ -160,6 +160,7 @@ export const PagePathNavSticky = (props: PagePathNavStickyProps): JSX.Element =>
               <PagePathNav
                 {...props}
                 isCollapseParents={isCollapseParents}
+                formerLinkClassName={isCollapseParents ? '' : 'd-inline-block mb-sm-2'}
                 latterLinkClassName={isCollapseParents ? 'fs-3  text-truncate' : ''}
                 maxWidth={isCollapseParents ? navMaxWidth : undefined}
               />

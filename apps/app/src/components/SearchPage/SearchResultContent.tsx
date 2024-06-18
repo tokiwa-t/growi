@@ -218,7 +218,7 @@ export const SearchResultContent: FC<Props> = (props: Props) => {
       <RightComponent />
 
       <div className="container-lg grw-container-convertible pt-2 pb-2">
-        <PagePathNav pageId={page._id} pagePath={page.path} formerLinkClassName="small" latterLinkClassName="fs-3 text-truncate" />
+        <PagePathNav pageId={page._id} pagePath={page.path} latterLinkClassName="fs-3 text-truncate" />
       </div>
 
       <div
