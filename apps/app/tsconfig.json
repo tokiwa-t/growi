@@ -2,6 +2,8 @@
   "$schema": "http://json.schemastore.org/tsconfig",
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "module": "CommonJS",
+
     "jsx": "preserve",
     "resolveJsonModule": true,
     "types": [
@@ -37,10 +39,6 @@
   ],
   "ts-node": {
     "transpileOnly": true,
-    "swc": true,
-    "compilerOptions": {
-      "module": "CommonJS",
-      "moduleResolution": "Node"
-    }
+    "swc": true
   }
 }

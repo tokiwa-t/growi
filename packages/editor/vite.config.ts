@@ -18,7 +18,6 @@ export default defineConfig({
   plugins: [
     react(),
     dts({
-      entryRoot: 'src',
       exclude: [
         ...excludeFiles,
       ],
